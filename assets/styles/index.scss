@@ -1,2 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$black: #000;
+
+.board {
+  height: 500px;
+  width: 500px;
+}
+
+td {
+  border: 1px solid $black;
+}
