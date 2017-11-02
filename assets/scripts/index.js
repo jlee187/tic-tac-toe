@@ -12,3 +12,10 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+
+const clickEvents = require('./events')
+
+// On document ready
+$(() => {
+  $('#cell-zero').on('submit', clickEvents.onGetBooks) // click function to register click with API... must record in JS too
+})
