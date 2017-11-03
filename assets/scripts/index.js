@@ -31,6 +31,9 @@ square.forEach(function (i) {
 // <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
 
 const correctArr = function (selection) {
+  if (endGame(xGameBoard) === 'won' || endGame(oGameBoard) === 'won') {
+    return
+  }
   for (let i = 0; i < 9; i++) {
     const allSelection = xGameBoard.concat(oGameBoard)
     if (allSelection.indexOf(selection) === -1) {
@@ -38,7 +41,7 @@ const correctArr = function (selection) {
       if (whoseTurn % 2 === 0) {
         xSelection(selection, 'X')
         console.log('xGameBoard :' + xGameBoard)
-        endGame(xGameBoard)
+        endGame(xGameBoard, 'X')
       } else {
         oSelection(selection)
         console.log('oGameBoard :' + oGameBoard)
@@ -80,20 +83,10 @@ const addO = function (i) {
   $('#cell-' + i).text('O')
 }
 
-const winningPairs = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 3, 8],
-  [0, 4, 8], [2, 4, 6]]
-
-// Unclear
-
-// const board = function () {
-//   for (let i = 0; i < 9; i++) {
-//
-//   }
-// }
-
 const endGame = function (boardChoice, turn) {
   if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(2) !== -1)) {
     console.log(turn + ' wins')
+    return 'won'
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     console.log(turn + ' wins')
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(8) !== -1)) {
