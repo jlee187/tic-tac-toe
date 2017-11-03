@@ -16,72 +16,8 @@ $(() => {
 // const clickEvents = require('./events')
 
 // On document ready
+
 $(() => {
-// let checkCheck = 0 // see if the click event is registering properly... can't increment appropriately
-// $('#cell-zero').on('submit', clickEvents.onGetBooks) // click function to register click with API... must record in JS too
-
-//   let choice = 0
-//
-//   $('#cell-zero').on('click', function (event) {
-//     whoseTurn += 1 // scope issue... child can access parent but parent cannot access local
-//     choice = ($(this).val()) + 1
-//     return choice
-//     // console.log(whoseTurn)
-//     // checkCheck += 1
-//     // console.log(checkCheck)
-//   })
-//
-//   $('#cell-one').on('click', function (event) {
-//     $('#cell-one').text(function () {
-//       if (whoseTurn % 2 === 0) {
-//         return 'X'
-//       } else {
-//         return 'O'
-//       }
-//     })
-//   })
-//
-//   $('#cell-two').on('click', function (event) {
-//     $('#cell-two').text(function () {
-//       if (whoseTurn % 2 === 0) {
-//         return 'X'
-//       } else {
-//         return 'O'
-//       }
-//     })
-//   })
-//
-//   $('#cell-three').on('click', function (event) {
-//     $('#cell-three').text(function () {
-//       if (whoseTurn % 2 === 0) {
-//         return 'X'
-//       } else {
-//         return 'O'
-//       }
-//     })
-//   })
-//
-//   $('#cell-four').on('click', function (event) {
-//     $('#cell-four').text(function () {
-//       if (whoseTurn % 2 === 0) {
-//         return 'X'
-//       } else {
-//         return 'O'
-//       }
-//     })
-//   })
-//
-//   $('#cell-five').on('click', function (event) {
-//     $('#cell-five').text(function () {
-//       if (whoseTurn % 2 === 0) {
-//         return 'X'
-//       } else {
-//         return 'O'
-//       }
-//     })
-//   })
-// })
-
   const square = [0, 1, 2, 3, 4, 5, 6, 7, 8]
   let whoseTurn = 2
 
@@ -91,23 +27,6 @@ $(() => {
       correctArr(i)
     })
   })
-
-  // $('.board').on('click', function (event) {
-  // whoseTurn += 1 // scope issue... child can access parent but parent cannot access local
-  // console.log('hi')
-  // console.log(whoseTurn)
-  // checkCheck += 1
-  // console.log(checkCheck)
-  // })
-
-  // const gameBoard = []
-  // const allSelection = function (selection) {
-  //   for (let i = 0; i < 8; i++) {
-  //     if (gameBoard.indexOf(selection) === -1) {
-  //       gameBoard.push(selection)
-  //     }
-  //   }
-  // }
 
   // <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
 
@@ -133,7 +52,6 @@ $(() => {
       if (xGameBoard.indexOf(selection) === -1) {
         xGameBoard.push(selection)
         addX(selection)
-        // $('#cell-' + i).text('X')
       }
     }
     whoseTurn += 1
@@ -146,12 +64,11 @@ $(() => {
         oGameBoard.push(selection)
         addO(selection)
       }
-      // $('#cell-' + i).text('O')
     }
     whoseTurn += 1
   }
 
-  // Add X and O for respective cells
+  // Add X and O for respective cell clicked (net new add)
 
   const addX = function (i) {
     $('#cell-' + i).text('X')
