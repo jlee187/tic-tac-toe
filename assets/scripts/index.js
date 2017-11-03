@@ -31,18 +31,21 @@ square.forEach(function (i) {
 // <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
 
 const correctArr = function (selection) {
+  if (endGame(xGameBoard) === 'won' || endGame(oGameBoard) === 'won') {
+    return
+  }
   for (let i = 0; i < 9; i++) {
     const allSelection = xGameBoard.concat(oGameBoard)
     if (allSelection.indexOf(selection) === -1) {
       console.log(allSelection)
       if (whoseTurn % 2 === 0) {
-        xSelection(selection)
+        xSelection(selection, 'X')
         console.log('xGameBoard :' + xGameBoard)
-        endGame()
+        endGame(xGameBoard, 'X')
       } else {
         oSelection(selection)
         console.log('oGameBoard :' + oGameBoard)
-        endGame()
+        endGame(oGameBoard, 'O')
       }
     }
   }
@@ -80,6 +83,7 @@ const addO = function (i) {
   $('#cell-' + i).text('O')
 }
 
+<<<<<<< HEAD
 const winningPairs = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 3, 8],
   [0, 4, 8], [2, 4, 6]]
 
@@ -100,6 +104,29 @@ const clickEvents = require('./events')
 $(() => {
   $('#log-in').on('submit', clickEvents.onSignUp)
 })
+=======
+const endGame = function (boardChoice, turn) {
+  if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(2) !== -1)) {
+    console.log(turn + ' wins')
+    return 'won'
+  } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(6) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(8) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(5) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(6) !== -1) && (boardChoice.indexOf(7) !== -1) && (boardChoice.indexOf(8) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(7) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(8) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(6) !== -1)) {
+    console.log(turn + ' wins')
+  }
+}
+// })
+>>>>>>> javascript.3
 
 module.exports =
   xGameBoard,
