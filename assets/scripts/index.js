@@ -92,13 +92,13 @@ $(() => {
     })
   })
 
-  $('.board').on('click', function (event) {
-    // whoseTurn += 1 // scope issue... child can access parent but parent cannot access local
-    // console.log('hi')
-    // console.log(whoseTurn)
-    // checkCheck += 1
-    // console.log(checkCheck)
-  })
+  // $('.board').on('click', function (event) {
+  // whoseTurn += 1 // scope issue... child can access parent but parent cannot access local
+  // console.log('hi')
+  // console.log(whoseTurn)
+  // checkCheck += 1
+  // console.log(checkCheck)
+  // })
 
   // const gameBoard = []
   // const allSelection = function (selection) {
@@ -109,7 +109,7 @@ $(() => {
   //   }
   // }
 
-// <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
+  // <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
 
   const correctArr = function (selection) {
     for (let i = 0; i < 9; i++) {
@@ -130,7 +130,11 @@ $(() => {
   const xGameBoard = []
   const xSelection = function (selection) {
     for (let i = 0; i < 9; i++) {
-      xGameBoard.indexOf(selection) === -1 ? xGameBoard.push(selection) : ""
+      if (xGameBoard.indexOf(selection) === -1) {
+        xGameBoard.push(selection)
+        addX(selection)
+        // $('#cell-' + i).text('X')
+      }
     }
     whoseTurn += 1
   }
@@ -138,8 +142,22 @@ $(() => {
   const oGameBoard = []
   const oSelection = function (selection) {
     for (let i = 0; i < 9; i++) {
-      oGameBoard.indexOf(selection) === -1 ? oGameBoard.push(selection) : ""
+      if (oGameBoard.indexOf(selection) === -1) {
+        oGameBoard.push(selection)
+        addO(selection)
+      }
+      // $('#cell-' + i).text('O')
     }
     whoseTurn += 1
+  }
+
+  // Add X and O for respective cells
+
+  const addX = function (i) {
+    $('#cell-' + i).text('X')
+  }
+
+  const addO = function (i) {
+    $('#cell-' + i).text('O')
   }
 })
