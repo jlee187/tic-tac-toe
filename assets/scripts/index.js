@@ -84,16 +84,22 @@ const winningPairs = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2,
   [0, 4, 8], [2, 4, 6]]
 
 // Unclear
-
-const endGame = function () {
-  for (let i = 0; i < xGameBoard.length; i++) {
-    if (xGameboard[i] = winningPairs[i][1] &&
-        xGameboard[i] = winningPairs[i][2] &&
-        xGameboard[i] = winningPairs[i][3]
-  }
-}
-
+//
+// const endGame = function () {
+//   for (let i = 0; i < xGameBoard.length; i++) {
+//     if (xGameboard[i] = winningPairs[i][1] &&
+//         xGameboard[i] = winningPairs[i][2] &&
+//         xGameboard[i] = winningPairs[i][3]
+//   }
+// }
 // })
+
+const clickEvents = require('./events')
+
+// On document ready
+$(() => {
+  $('#log-in').on('submit', clickEvents.onSignUp)
+})
 
 module.exports =
   xGameBoard,
