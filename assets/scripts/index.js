@@ -76,11 +76,11 @@ const oSelection = function (selection) {
 // Add X and O for respective cell clicked (net new add)
 
 const addX = function (i) {
-  $('#cell-' + i).text('X')
+  $('#cell-' + i).html('X')
 }
 
 const addO = function (i) {
-  $('#cell-' + i).text('O')
+  $('#cell-' + i).html('O')
 }
 
 const clickEvents = require('./events')
@@ -109,7 +109,7 @@ const endGame = function (boardChoice, turn) {
   } else if ((boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(7) !== -1)) {
     // console.log(turn + ' wins')
     return 'won'
-  } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(8) !== -1)) {
+  } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(5) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     return 'won'
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(6) !== -1)) {
@@ -118,8 +118,6 @@ const endGame = function (boardChoice, turn) {
   }
 }
 // })
-
-
 
 module.exports =
   xGameBoard,
