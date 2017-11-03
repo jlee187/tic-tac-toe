@@ -17,64 +17,84 @@ $(() => {
 
 // On document ready
 
-$(() => {
-  const square = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-  let whoseTurn = 2
+// $(() => {
+const square = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+let whoseTurn = 2
 
-  square.forEach(function (i) {
-    $('#cell-' + i).on('click', function () {
-      // console.log('you clicked slider controler ' + i + '!')
-      correctArr(i)
-    })
+square.forEach(function (i) {
+  $('#cell-' + i).on('click', function () {
+    // console.log('you clicked slider controler ' + i + '!')
+    correctArr(i)
   })
-
-  // <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
-
-  const correctArr = function (selection) {
-    for (let i = 0; i < 9; i++) {
-      const allSelection = xGameBoard.concat(oGameBoard)
-      if (allSelection.indexOf(selection) === -1) {
-        console.log(allSelection)
-        if (whoseTurn % 2 === 0) {
-          xSelection(selection)
-          console.log('xGameBoard :' + xGameBoard)
-        } else {
-          oSelection(selection)
-          console.log('oGameBoard :' + oGameBoard)
-        }
-      }
-    }
-  }
-
-  const xGameBoard = []
-  const xSelection = function (selection) {
-    for (let i = 0; i < 9; i++) {
-      if (xGameBoard.indexOf(selection) === -1) {
-        xGameBoard.push(selection)
-        addX(selection)
-      }
-    }
-    whoseTurn += 1
-  }
-
-  const oGameBoard = []
-  const oSelection = function (selection) {
-    for (let i = 0; i < 9; i++) {
-      if (oGameBoard.indexOf(selection) === -1) {
-        oGameBoard.push(selection)
-        addO(selection)
-      }
-    }
-    whoseTurn += 1
-  }
-
-  // Add X and O for respective cell clicked (net new add)
-
-  const addX = function (i) {
-    $('#cell-' + i).text('X')
-  }
-
-  const addO = function (i) {
-    $('#cell-' + i).text('O')
-  }
 })
+
+// <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
+
+const correctArr = function (selection) {
+  for (let i = 0; i < 9; i++) {
+    const allSelection = xGameBoard.concat(oGameBoard)
+    if (allSelection.indexOf(selection) === -1) {
+      console.log(allSelection)
+      if (whoseTurn % 2 === 0) {
+        xSelection(selection)
+        console.log('xGameBoard :' + xGameBoard)
+        endGame()
+      } else {
+        oSelection(selection)
+        console.log('oGameBoard :' + oGameBoard)
+        endGame()
+      }
+    }
+  }
+}
+
+const xGameBoard = []
+const xSelection = function (selection) {
+  for (let i = 0; i < 9; i++) {
+    if (xGameBoard.indexOf(selection) === -1) {
+      xGameBoard.push(selection)
+      addX(selection)
+    }
+  }
+  whoseTurn += 1
+}
+
+const oGameBoard = []
+const oSelection = function (selection) {
+  for (let i = 0; i < 9; i++) {
+    if (oGameBoard.indexOf(selection) === -1) {
+      oGameBoard.push(selection)
+      addO(selection)
+    }
+  }
+  whoseTurn += 1
+}
+
+// Add X and O for respective cell clicked (net new add)
+
+const addX = function (i) {
+  $('#cell-' + i).text('X')
+}
+
+const addO = function (i) {
+  $('#cell-' + i).text('O')
+}
+
+const winningPairs = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 3, 8],
+  [0, 4, 8], [2, 4, 6]]
+
+// Unclear
+
+const endGame = function () {
+  for (let i = 0; i < xGameBoard.length; i++) {
+    if (xGameboard[i] = winningPairs[i][1] &&
+        xGameboard[i] = winningPairs[i][2] &&
+        xGameboard[i] = winningPairs[i][3]
+  }
+}
+
+// })
+
+module.exports =
+  xGameBoard,
+  oGameBoard
