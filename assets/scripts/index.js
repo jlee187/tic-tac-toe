@@ -36,13 +36,13 @@ const correctArr = function (selection) {
     if (allSelection.indexOf(selection) === -1) {
       console.log(allSelection)
       if (whoseTurn % 2 === 0) {
-        xSelection(selection)
+        xSelection(selection, 'X')
         console.log('xGameBoard :' + xGameBoard)
-        endGame()
+        endGame(xGameBoard)
       } else {
         oSelection(selection)
         console.log('oGameBoard :' + oGameBoard)
-        endGame()
+        endGame(oGameBoard, 'O')
       }
     }
   }
@@ -85,14 +85,31 @@ const winningPairs = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2,
 
 // Unclear
 
-const endGame = function () {
-  for (let i = 0; i < xGameBoard.length; i++) {
-    if (xGameboard[i] = winningPairs[i][1] &&
-        xGameboard[i] = winningPairs[i][2] &&
-        xGameboard[i] = winningPairs[i][3]
+// const board = function () {
+//   for (let i = 0; i < 9; i++) {
+//
+//   }
+// }
+
+const endGame = function (boardChoice, turn) {
+  if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(2) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(6) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(8) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(5) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(6) !== -1) && (boardChoice.indexOf(7) !== -1) && (boardChoice.indexOf(8) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(7) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(8) !== -1)) {
+    console.log(turn + ' wins')
+  } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(6) !== -1)) {
+    console.log(turn + ' wins')
   }
 }
-
 // })
 
 module.exports =
