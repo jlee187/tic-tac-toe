@@ -13,88 +13,133 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const clickEvents = require('./events')
+// const clickEvents = require('./events')
 
 // On document ready
 $(() => {
 // let checkCheck = 0 // see if the click event is registering properly... can't increment appropriately
+// $('#cell-zero').on('submit', clickEvents.onGetBooks) // click function to register click with API... must record in JS too
 
-  let whoseTurn = 1
-  console.log(whoseTurn)
+//   let choice = 0
+//
+//   $('#cell-zero').on('click', function (event) {
+//     whoseTurn += 1 // scope issue... child can access parent but parent cannot access local
+//     choice = ($(this).val()) + 1
+//     return choice
+//     // console.log(whoseTurn)
+//     // checkCheck += 1
+//     // console.log(checkCheck)
+//   })
+//
+//   $('#cell-one').on('click', function (event) {
+//     $('#cell-one').text(function () {
+//       if (whoseTurn % 2 === 0) {
+//         return 'X'
+//       } else {
+//         return 'O'
+//       }
+//     })
+//   })
+//
+//   $('#cell-two').on('click', function (event) {
+//     $('#cell-two').text(function () {
+//       if (whoseTurn % 2 === 0) {
+//         return 'X'
+//       } else {
+//         return 'O'
+//       }
+//     })
+//   })
+//
+//   $('#cell-three').on('click', function (event) {
+//     $('#cell-three').text(function () {
+//       if (whoseTurn % 2 === 0) {
+//         return 'X'
+//       } else {
+//         return 'O'
+//       }
+//     })
+//   })
+//
+//   $('#cell-four').on('click', function (event) {
+//     $('#cell-four').text(function () {
+//       if (whoseTurn % 2 === 0) {
+//         return 'X'
+//       } else {
+//         return 'O'
+//       }
+//     })
+//   })
+//
+//   $('#cell-five').on('click', function (event) {
+//     $('#cell-five').text(function () {
+//       if (whoseTurn % 2 === 0) {
+//         return 'X'
+//       } else {
+//         return 'O'
+//       }
+//     })
+//   })
+// })
 
-  $('#cell-zero').on('submit', clickEvents.onGetBooks) // click function to register click with API... must record in JS too
+  const square = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  let whoseTurn = 2
 
-  let choice = 0
+  square.forEach(function (i) {
+    $('#cell-' + i).on('click', function () {
+      // console.log('you clicked slider controler ' + i + '!')
+      correctArr(i)
+    })
+  })
 
-  $('#cell-zero').on('click', function (event) {
-    whoseTurn += 1 // scope issue... child can access parent but parent cannot access local
-    choice = ($(this).val()) + 1
-    return choice
+  $('.board').on('click', function (event) {
+    // whoseTurn += 1 // scope issue... child can access parent but parent cannot access local
+    // console.log('hi')
     // console.log(whoseTurn)
     // checkCheck += 1
     // console.log(checkCheck)
   })
 
-  $('#cell-one').on('click', function (event) {
-    $('#cell-one').text(function () {
-      if (whoseTurn % 2 === 0) {
-        return 'X'
-      } else {
-        return 'O'
-      }
-    })
-  })
+  // const gameBoard = []
+  // const allSelection = function (selection) {
+  //   for (let i = 0; i < 8; i++) {
+  //     if (gameBoard.indexOf(selection) === -1) {
+  //       gameBoard.push(selection)
+  //     }
+  //   }
+  // }
 
-  $('#cell-two').on('click', function (event) {
-    $('#cell-two').text(function () {
-      if (whoseTurn % 2 === 0) {
-        return 'X'
-      } else {
-        return 'O'
-      }
-    })
-  })
+// <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
 
-  $('#cell-three').on('click', function (event) {
-    $('#cell-three').text(function () {
-      if (whoseTurn % 2 === 0) {
-        return 'X'
-      } else {
-        return 'O'
+  const correctArr = function (selection) {
+    for (let i = 0; i < 9; i++) {
+      const allSelection = xGameBoard.concat(oGameBoard)
+      if (allSelection.indexOf(selection) === -1) {
+        console.log(allSelection)
+        if (whoseTurn % 2 === 0) {
+          xSelection(selection)
+          console.log('xGameBoard :' + xGameBoard)
+        } else {
+          oSelection(selection)
+          console.log('oGameBoard :' + oGameBoard)
+        }
       }
-    })
-  })
+    }
+  }
 
-  $('#cell-four').on('click', function (event) {
-    $('#cell-four').text(function () {
-      if (whoseTurn % 2 === 0) {
-        return 'X'
-      } else {
-        return 'O'
-      }
-    })
-  })
+  const xGameBoard = []
+  const xSelection = function (selection) {
+    for (let i = 0; i < 9; i++) {
+      xGameBoard.indexOf(selection) === -1 ? xGameBoard.push(selection) : ""
+    }
+    whoseTurn += 1
+  }
 
-  $('#cell-five').on('click', function (event) {
-    $('#cell-five').text(function () {
-      if (whoseTurn % 2 === 0) {
-        return 'X'
-      } else {
-        return 'O'
-      }
-    })
-  })
+  const oGameBoard = []
+  const oSelection = function (selection) {
+    for (let i = 0; i < 9; i++) {
+      oGameBoard.indexOf(selection) === -1 ? oGameBoard.push(selection) : ""
+    }
+    whoseTurn += 1
+  }
 })
-
-// Attempted to interate through click events... probably going to have to have 9 event handlers
-// $('.board').click(function (event) {
-//   event.stopPropagation()
-//   console.log(10)
-// })
-//
-
-// $('#cell-').on('click', function (event) {
-//   console.log('clicked', $(this).text())
-// }).each(function () {
-//   console.log('clicked', $(this).text())
-// })
