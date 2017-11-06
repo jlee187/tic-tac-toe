@@ -50,7 +50,21 @@
 
       <h1>Reset Button</h1>
 
-      <button type="submit" class="btn btn-default">Reset</button>
+      <button id='reset' type="submit" class="btn btn-default">Reset</button>
+
+      <form class="game" id="get-games">
+            <div class="get-games">
+            </div>
+            <button type="submit" class="btn btn-default">Get All Games</button>
+          </form>
+
+      <form id="create-game">
+        <fieldset>
+          <legend>Create Game!</legend>
+          <!-- <input type="text" name="credentials[email]" placeholder="Email"> -->
+          <input type="submit" name="submit" value="Create Game!">
+        </fieldset>
+      </form>
 
 
       <h1 id="game-status"></h1>

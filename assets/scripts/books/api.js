@@ -61,6 +61,26 @@ const signOut = function (data) {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games[?over=]',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const createGame = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 // const signUp = (data) =>
 //   new Promise(function (resolve, reject) {
 //     if (Math.random() > 0.5) {
@@ -76,5 +96,7 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createGame,
+  index
 }

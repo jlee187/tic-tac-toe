@@ -58,11 +58,14 @@ const correctArr = function (selection) {
     }
   }
 }
-
+const gameBoardFull = ['', '', '', '', '', '', '', '', '']
 const xGameBoard = []
 const xSelection = function (selection) {
   for (let i = 0; i < 9; i++) {
     if (xGameBoard.indexOf(selection) === -1) {
+      // gameBoardEmpty.splice(selection, 1)
+      gameBoardFull.splice(selection, 1, 'X')
+      console.log(gameBoardFull)
       xGameBoard.push(selection)
       addX(selection)
       // addAllXs(selection)
@@ -80,6 +83,9 @@ const oGameBoard = []
 const oSelection = function (selection) {
   for (let i = 0; i < 9; i++) {
     if (oGameBoard.indexOf(selection) === -1) {
+      // gameBoardEmpty.splice(selection, 1)
+      gameBoardFull.splice(selection, 1, 'O')
+      console.log(gameBoardFull)
       oGameBoard.push(selection)
       addO(selection)
       // addAllOs(selection)
@@ -99,25 +105,9 @@ const addX = function (i) {
   $('#cell-' + i).html('X')
 }
 
-// const board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-//
-// const addAllXs = function (selection) {
-//   board[selection].replace(' ', 'X')
-// }
-// const addAllOs = function (selection) {
-//   board[selection].replace(' ', 'O')
-// }
-
 const addO = function (i) {
   $('#cell-' + i).html('O')
 }
-
-// button.addEventListener("click", function () {
-//   let tds = document.getElementsByTagName('td');
-//   for (let i = 0; i < tds.length; i++) {
-//     tds[i].innerHTML = ''
-//   }
-// })
 
 const endGameX = function (boardChoice, turn) {
   if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(2) !== -1)) {
@@ -190,8 +180,18 @@ const endGameO = function (boardChoice, turn) {
     return 'won'
   }
 }
-// })
 
-module.exports =
+$('#reset').on('click', function () {
+  const tds = document.getElementsByTagName('td')
+  $('#game-status').html('')
+  console.log(gameBoardFull)
+  for (let i = 0; i < tds.length; i++) {
+    tds[i].innerHTML = ''
+  }
+})
+
+module.exports = {
   xGameBoard,
-  oGameBoard
+  oGameBoard,
+  gameBoardFull
+}

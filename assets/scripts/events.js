@@ -66,11 +66,29 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const index = function (event) {
+  event.preventDefault()
+  api.index()
+    .then(ui.onSuccess)
+    .catch(ui.onError)
+}
+
+const onCreateGame = function (event) {
+  // const data = getFormFields(this)
+  // console.log(data)
+  event.preventDefault()
+  api.createGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
+}
+
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#get-games').on('submit', index)
+  $('#create-game').on('submit', onCreateGame)
 }
 
 module.exports = {
