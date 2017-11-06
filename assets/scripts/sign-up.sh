@@ -1,6 +1,11 @@
 #!/bin/bash
 
-curl --include --request POST http://tic-tac-toe.wdibos.com/sign-up \
+API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
+URL_PATH="/sign-up"
+
+curl "${API}${URL_PATH}" \
+  --include \
+  --request POST \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {

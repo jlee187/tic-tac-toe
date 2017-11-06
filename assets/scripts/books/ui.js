@@ -1,18 +1,73 @@
+// 'use strict'
+//
+// const onSuccess = function (data) {
+//   if (data.credentials) {
+//     console.log(data.credentials)
+//   } else {
+//     console.table(data.credentials)
+//   }
+// }
+//
+// const onError = function (response) {
+//   console.error(response)
+// }
+//
+// module.exports = {
+//   onSuccess,
+//   onError
+// }
+//
 'use strict'
+const store = require('../store')
 
-const onSuccess = function (data) {
-  if (data.credentials) {
-    console.log(data.credentials)
-  } else {
-    console.table(data.credentials)
-  }
+const signUpSuccess = function (data) {
+  console.log(data)
+  $('#message').text('Signed up succesfully')
 }
 
-const onError = function (response) {
-  console.error(response)
+const signUpFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on sign up')
+}
+
+const signInSuccess = function (data) {
+  console.log(data)
+  store.user = data.user
+  $('#message').text('Signed in succesfully')
+}
+
+const signInFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on sign in')
+}
+
+const changePasswordSuccess = function (data) {
+  console.log(data)
+  $('#message').text('Changed password successfully')
+}
+
+const changePasswordFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on change passwords')
+}
+
+const signOutSuccess = function () {
+  console.log('Signed out successfully')
+  $('#message').text('Signed out successfully')
+}
+
+const signOutFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on sign out')
 }
 
 module.exports = {
-  onSuccess,
-  onError
+  signUpSuccess,
+  signUpFailure,
+  signInSuccess,
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }
