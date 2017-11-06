@@ -81,6 +81,25 @@ const createGame = function () {
   })
 }
 
+const update = function (game) {
+  let data = {
+    game: {
+      cell: {
+        index: game.index,
+        value: game.value
+      },
+      over: false
+    }
+  }
+  data = JSON.stringify(data)
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + game.id,
+    method: 'PATCH',
+    contentType: 'application/json',
+    data
+  })
+}
+
 // const signUp = (data) =>
 //   new Promise(function (resolve, reject) {
 //     if (Math.random() > 0.5) {
@@ -98,5 +117,6 @@ module.exports = {
   changePassword,
   signOut,
   createGame,
-  index
+  index,
+  update
 }

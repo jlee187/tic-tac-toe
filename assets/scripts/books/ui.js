@@ -72,7 +72,7 @@ const createGameFailure = function (error) {
 }
 
 const onSuccess = function (data) {
-  if (data.book) {
+  if (data.games) {
     console.log(data.games)
   } else {
     console.table(data.games)
@@ -81,6 +81,15 @@ const onSuccess = function (data) {
 
 const onError = function (response) {
   console.error(response)
+}
+
+const updateSuccess = function () {
+  $('#message').html('Book updated successfully!')
+}
+
+const updateFailure = function (error) {
+  console.log(error)
+  $('#message').html('Update failed. See console for details.')
 }
 
 module.exports = {
@@ -95,5 +104,7 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   onSuccess,
-  onError
+  onError,
+  updateSuccess,
+  updateFailure
 }

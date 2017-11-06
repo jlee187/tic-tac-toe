@@ -8,10 +8,10 @@ API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
     --header "Content-type: application/json" \
     --header "Authorization: Token token=${TOKEN}" \
     --data '{
-      "games": {
-        "id": "",
+      "game": {
+        "id": ,
         "cells": ["","","","","","","","",""],
-        "over": "",
+        "over": ,
         "player_x": {
           "id": "'"${ID}"'",
           "email": "'"${EMAIL}"'"

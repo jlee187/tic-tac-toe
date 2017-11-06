@@ -4,7 +4,7 @@ API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
 
   curl "${API}${URL_PATH}"\
     --include \
-    --request POST \
+    --request PATCH \
     --header "Content-type: application/json" \
     --header "Authorization: Token token=${TOKEN}" \
     --data '{
