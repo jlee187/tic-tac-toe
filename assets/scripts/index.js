@@ -7,10 +7,8 @@ const store = require('./store')
 
 $(() => {
   setAPIOrigin(location, config)
-})
-
-$(() => {
   events.addHandlers()
+  $('.board').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file
@@ -41,7 +39,7 @@ if (over === false) {
   store.game.over = true
   console.log('new game needed')
 }
-// <<< working code that registers clicks and appends into an array!!!!!!!!!!!!! Adds to X and O arrays
+// <<< starts program
 
 const runProgram = function (selection) {
   if (over === true) {
@@ -263,6 +261,7 @@ $('#reset').on('click', function () {
   xGameBoard.splice(0, xGameBoard.length)
   console.log(gameBoardFull)
   over = false
+  store.game.over = false
   for (let i = 0; i < tds.length; i++) {
     tds[i].innerHTML = ''
   }

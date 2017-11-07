@@ -82,7 +82,8 @@ const createGameSuccess = function (data) {
   store.game.id = data.game.id
   store.game.cells = data.game.cells
   store.game.over = data.game.over
-  $('#message').text('Create game succesfully')
+  $('.board').show()
+  $('#message').text('Created game succesfully')
 }
 
 const createGameFailure = function (error) {
@@ -93,6 +94,7 @@ const createGameFailure = function (error) {
 const onSuccess = function (data) {
   if (data.games) {
     console.log(data.games)
+    console.log(data.games.length)
     $('#message').text(data.games)
   } else {
     console.table(data.games)

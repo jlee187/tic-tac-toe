@@ -99,7 +99,7 @@ const update = function (game) {
         index: store.game.cells.index,
         value: store.game.cells.value
       },
-      over: false
+      over: store.game.over
     }
   }
   data = JSON.stringify(data)
@@ -113,17 +113,6 @@ const update = function (game) {
     data
   })
 }
-
-// const signUp = (data) =>
-//   new Promise(function (resolve, reject) {
-//     if (Math.random() > 0.5) {
-//       resolve('in signUp')
-//     } else {
-//       const error = new Error('Random')
-//       error.data = data
-//       reject(error)
-//     }
-//   })
 
 module.exports = {
   signUp,
