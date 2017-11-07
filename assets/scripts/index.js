@@ -27,6 +27,8 @@ $(() => {
 const square = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 let whoseTurn = 2
 let over = false
+let xscore = 0
+let oscore = 0
 
 if (over === false) {
   square.forEach(function (i) {
@@ -119,34 +121,50 @@ const endGameX = function (boardChoice, turn) {
   if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(2) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   } else if ((boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(5) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   } else if ((boardChoice.indexOf(6) !== -1) && (boardChoice.indexOf(7) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   } else if ((boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(7) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(5) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
+    xscore++
+    $('#x-score').html(xscore)
     over = true
   }
 }
@@ -155,34 +173,50 @@ const endGameO = function (boardChoice, turn) {
   if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(2) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   } else if ((boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(5) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   } else if ((boardChoice.indexOf(6) !== -1) && (boardChoice.indexOf(7) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   } else if ((boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(7) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(5) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
+    oscore++
+    $('#o-score').html(oscore)
     over = true
   }
 }

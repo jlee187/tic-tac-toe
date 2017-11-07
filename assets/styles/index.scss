@@ -3,6 +3,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $blue: #f00;
 $black: #000;
+$green: #f06801;
+
+background {
+  color: $green;
+}
 
 .board {
   font-size: 20px;
@@ -19,8 +24,15 @@ $black: #000;
 //   border-right: 1px solid $black;
 // }
 
-td {
+.o-score,
+.x-score {
+  align-content: center;
   border: 1px solid $black;
+  display: inline-block;
+}
+
+td {
   background-color: $blue;
+  border: 1px solid $black;
   margin: 0 auto;
 }
