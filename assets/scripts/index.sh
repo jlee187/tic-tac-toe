@@ -9,12 +9,12 @@ API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
     --header "Authorization: Token token=${TOKEN}" \
     --data '{
       "game": {
-        "id": ,
+        "id": 3,
         "cells": ["","","","","","","","",""],
-        "over": ,
+        "over": false,
         "player_x": {
-          "id": "'"${ID}"'",
-          "email": "'"${EMAIL}"'"
+          "id": ,
+          "email": "test10@"
         },
         "player_o": null
       }

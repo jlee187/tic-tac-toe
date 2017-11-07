@@ -61,20 +61,31 @@ const signOut = function (data) {
   })
 }
 
-const index = function () {
-  return $.ajax({
-    url: config.apiOrigin + '/games[?over=]',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+// const index = function () {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games[?over=]',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
-const createGame = function () {
+const createGame = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const showGame = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -85,16 +96,19 @@ const update = function (game) {
   let data = {
     game: {
       cell: {
-        index: game.index,
-        value: game.value
+        index: store.game.cells.index,
+        value: store.game.cells.value
       },
       over: false
     }
   }
   data = JSON.stringify(data)
   return $.ajax({
-    url: config.apiOrigin + '/games/' + game.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     contentType: 'application/json',
     data
   })
@@ -117,6 +131,7 @@ module.exports = {
   changePassword,
   signOut,
   createGame,
-  index,
+  // index,
+  showGame,
   update
 }

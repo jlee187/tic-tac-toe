@@ -1,13 +1,16 @@
 'use strict'
 
 const store = {
-  // 'game': {
+  // 'gameUser': {
+  //   'game': {
+  //     'id': '',
   //     'cell': {
-  //       'index': ,
-  //       'value':
+  //       'index': '',
+  //       'value': ''
   //     },
-  //     'over': false
+  //     'over': ''
   //   }
+  // }
 }
 
 module.exports = store

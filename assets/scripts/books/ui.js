@@ -18,6 +18,15 @@
 // }
 //
 'use strict'
+
+// Hide functionalities till signed in
+
+$('#change-password').hide()
+$('#sign-out').hide()
+$('#show-game').hide()
+$('#create-game').hide()
+$('#get-games').hide()
+
 const store = require('../store')
 
 const signUpSuccess = function (data) {
@@ -34,6 +43,11 @@ const signInSuccess = function (data) {
   console.log(data)
   store.user = data.user
   $('#message').text('Signed in succesfully')
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#show-game').show()
+  $('#create-game').show()
+  $('#get-games').show()
 }
 
 const signInFailure = function (error) {
@@ -63,6 +77,11 @@ const signOutFailure = function (error) {
 
 const createGameSuccess = function (data) {
   console.log(data)
+  console.log(data.game.id)
+  store.game = data.game
+  store.game.id = data.game.id
+  store.game.cells = data.game.cells
+  store.game.over = data.game.over
   $('#message').text('Create game succesfully')
 }
 
@@ -74,6 +93,7 @@ const createGameFailure = function (error) {
 const onSuccess = function (data) {
   if (data.games) {
     console.log(data.games)
+    $('#message').text(data.games)
   } else {
     console.table(data.games)
   }
@@ -84,7 +104,7 @@ const onError = function (response) {
 }
 
 const updateSuccess = function () {
-  $('#message').html('Book updated successfully!')
+  $('#message').html('Game updated successfully!')
 }
 
 const updateFailure = function (error) {

@@ -28,7 +28,8 @@
 const getFormFields = require(`../../lib/get-form-fields`)
 
 const api = require('./books/api')
-const ui = require('.//books/ui')
+const ui = require('./books/ui')
+const gameBoard = require('./index')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -66,12 +67,12 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const index = function (event) {
-  event.preventDefault()
-  api.index()
-    .then(ui.onSuccess)
-    .catch(ui.onError)
-}
+// const index = function (event) {
+//   event.preventDefault()
+//   api.index()
+//     .then(ui.onSuccess)
+//     .catch(ui.onError)
+// }
 
 const onCreateGame = function (event) {
   // const data = getFormFields(this)
@@ -82,12 +83,22 @@ const onCreateGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
+const onShowGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const game = data.game
+  // console.log(data)
+  api.showGame(game)
+    .then(ui.onSuccess)
+    .catch(ui.onFailure)
+}
+
 const onUpdateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const book = data.game
+  const game = data.game
   // console.log(data)
-  api.update(book)
+  api.update(game)
     .then(ui.updateSuccess)
     .catch(ui.updateFail)
 }
@@ -97,9 +108,10 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#get-games').on('submit', index)
+  // $('#get-games').on('submit', index)
   $('#create-game').on('submit', onCreateGame)
-  $('#update-game').on('click', onUpdateGame)
+  $('#show-game').on('submit', onShowGame)
+  $('.board').on('click', onUpdateGame)
 }
 
 module.exports = {

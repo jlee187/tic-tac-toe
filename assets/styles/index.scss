@@ -1,18 +1,25 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-$blue: #f00;
 $black: #000;
-$green: #f06801;
+$lightblue: #2aa2fe;
+$white: #fff;
 
-background {
-  color: $green;
+body {
+  background-color: $lightblue;
 }
 
 .board {
+  align-content: left;
+  background: $white;
+  border-collapse: collapse;
+  border-spacing: 0;
+  clear: both;
+  float: none;
   font-size: 20px;
   height: 500px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   table-layout: fixed;
   text-align: center;
   width: 500px;
@@ -24,15 +31,52 @@ background {
 //   border-right: 1px solid $black;
 // }
 
-.o-score,
-.x-score {
-  align-content: center;
+.o-score {
+  background: $white;
   border: 1px solid $black;
   display: inline-block;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 40%;
+}
+
+.x-score {
+  background: $white;
+  border: 1px solid $black;
+  display: inline-block;
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 40%;
+}
+
+.reset {
+  clear: both;
+  float: none;
 }
 
 td {
-  background-color: $blue;
-  border: 1px solid $black;
+  background-color: $lightblue;
+  height: 50px;
   margin: 0 auto;
+  width: 50px;
+}
+
+#cell-1,
+#cell-7 {
+  border-left: 6px solid $black;
+  border-right: 6px solid $black;
+}
+
+#cell-3,
+#cell-5 {
+  border-bottom: 6px solid $black;
+  border-top: 6px solid $black;
+}
+
+#cell-4 {
+  border: 6px solid $black;
 }
