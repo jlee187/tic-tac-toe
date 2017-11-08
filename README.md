@@ -13,12 +13,19 @@ Approach to Problem Solving:
 3) Identify where issue may be (typically is scope issue).
 4) Google potential issue... use MDN and stackoverflow mostly
 
+Technologies Used:
+1) javascript
+2) jquery
+3) SCSS/ css
+4) ajax
+5) html
+
 Unsolved Problems Hope to Be Fixed:
 1) Additional stats from user games
 2) Streamlined functions
+3) Additional CSS
 
-
-4-8 user stories for your game project.
+User stories for game project.
 1) As a user, I can choose what spots should be X's while the computer choose O's
 2) As a user, I can choose whether I am X's or O's
 3) As a user, I can log in and log out
@@ -26,3 +33,9 @@ Unsolved Problems Hope to Be Fixed:
 
 Link to wire frame:
 https://imgur.com/JudlwgJ
+
+Link to github:
+https://github.com/jlee187/tic-tac-toe.git
+
+Link to game:
+https://jlee187.github.io/tic-tac-toe/
