@@ -51,7 +51,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   event.preventDefault()
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
@@ -110,7 +110,7 @@ const onCreateGame = function (event) {
   event.preventDefault()
   $('#create-game').hide()
   $('#reset').text('New Game')
-  onShowGame(event)
+  // onShowGame(event)
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)

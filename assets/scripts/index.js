@@ -37,7 +37,7 @@ if (over === false) {
   })
 } else {
   store.game.over = true
-  console.log('new game needed')
+  // console.log('new game needed')
 }
 // <<< starts program
 
@@ -52,11 +52,11 @@ const runProgram = function (selection) {
       // console.log(allSelection)
       if (whoseTurn % 2 === 0) {
         xSelection(selection, 'X')
-        console.log('xGameBoard :' + xGameBoard)
+        // console.log('xGameBoard :' + xGameBoard)
         endGameX(xGameBoard, 'X')
       } else {
         oSelection(selection)
-        console.log('oGameBoard :' + oGameBoard)
+        // console.log('oGameBoard :' + oGameBoard)
         endGameO(oGameBoard, 'O')
       }
     }
@@ -73,7 +73,7 @@ const xSelection = function (selection) {
       store.game.cells.index = selection
       store.game.cells.value = 'X'
       // gameBoardObj.splice(selection, 1, {i: 'X'})
-      console.log(gameBoardFull)
+      // console.log(gameBoardFull)
       // console.log(gameBoardObj)
       xGameBoard.push(selection)
       addX(selection)
@@ -87,7 +87,7 @@ const xSelection = function (selection) {
     over = true
     return $('#game-status').html("It's a tie!")
   }
-  console.log('allSelection: ' + allSelection)
+  // console.log('allSelection: ' + allSelection)
 }
 
 const oGameBoard = []
@@ -99,7 +99,7 @@ const oSelection = function (selection) {
       store.game.cells.index = selection
       store.game.cells.value = 'O'
       // gameBoardObj.splice(selection, 1, {i: 'O'})
-      console.log(gameBoardFull)
+      // console.log(gameBoardFull)
       // console.log(gameBoardObj)
       oGameBoard.push(selection)
       addO(selection)
@@ -111,7 +111,7 @@ const oSelection = function (selection) {
   if (allSelection.length === 9) {
     return $('#game-status').html("It's a tie!")
   }
-  console.log('allSelection: ' + allSelection)
+  // console.log('allSelection: ' + allSelection)
 }
 
 // Add X and O for respective cell clicked (net new add)
@@ -125,7 +125,7 @@ const addO = function (i) {
 }
 
 const endGameX = function (boardChoice, turn) {
-  console.log(store.game.over)
+  // console.log(store.game.over)
   if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(2) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -307,7 +307,7 @@ $('#reset').on('click', function (event) {
   // }
   oGameBoard.splice(0, oGameBoard.length)
   xGameBoard.splice(0, xGameBoard.length)
-  console.log(gameBoardFull)
+  // console.log(gameBoardFull)
   over = false
   store.game.over = false
   for (let i = 0; i < tds.length; i++) {

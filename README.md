@@ -13,15 +13,16 @@ Approach to Problem Solving:
 3) Identify where issue may be (typically is scope issue).
 4) Google potential issue... use MDN and stackoverflow mostly
 
-Unsolved Problems Hope to Be Fiexed:
+Unsolved Problems Hope to Be Fixed:
 1) Additional stats from user games
 2) Streamlined functions
 
--   4-8 user stories for your game project.
-    1) As a user, I can choose what spots should be X's while the computer choose O's
-    2) As a user, I can choose whether I am X's or O's
-    3) As a user, I can log in and log out
-    4) As a user, the program will remember my record against the computer
 
+4-8 user stories for your game project.
+1) As a user, I can choose what spots should be X's while the computer choose O's
+2) As a user, I can choose whether I am X's or O's
+3) As a user, I can log in and log out
+4) As a user, the program will remember my record against the computer
 
+Link to wire frame:
 https://imgur.com/JudlwgJ
