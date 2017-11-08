@@ -29,7 +29,7 @@ const getFormFields = require(`../../lib/get-form-fields`)
 
 const api = require('./books/api')
 const ui = require('./books/ui')
-const gameBoard = require('./index')
+// const gameBoard = require('./index')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -61,10 +61,40 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   // const data = getFormFields(this)
   // console.log(data)
+  resetBoardSignOut()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#create-game').hide()
+  $('#reset').hide()
+  $('.board').hide()
+  $('#show-game').hide()
+  $('#sign-up').show()
+  $('#reset').text('Reset Board')
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+}
+
+const resetBoardSignOut = function () {
+  $('#cell-0').css('background-color', '#2aa2fe')
+  $('#cell-1').css('background-color', '#2aa2fe')
+  $('#cell-2').css('background-color', '#2aa2fe')
+  $('#cell-3').css('background-color', '#2aa2fe')
+  $('#cell-4').css('background-color', '#2aa2fe')
+  $('#cell-5').css('background-color', '#2aa2fe')
+  $('#cell-6').css('background-color', '#2aa2fe')
+  $('#cell-7').css('background-color', '#2aa2fe')
+  $('#cell-8').css('background-color', '#2aa2fe')
+  $('#cell-0').html(' ')
+  $('#cell-1').html(' ')
+  $('#cell-2').html(' ')
+  $('#cell-3').html(' ')
+  $('#cell-4').html(' ')
+  $('#cell-5').html(' ')
+  $('#cell-6').html(' ')
+  $('#cell-7').html(' ')
+  $('#cell-8').html(' ')
 }
 
 // const index = function (event) {
@@ -78,6 +108,9 @@ const onCreateGame = function (event) {
   // const data = getFormFields(this)
   // console.log(data)
   event.preventDefault()
+  $('#create-game').hide()
+  $('#reset').text('New Game')
+  onShowGame(event)
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
@@ -115,5 +148,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onCreateGame
 }

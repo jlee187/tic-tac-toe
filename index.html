@@ -54,17 +54,12 @@
             <button type="submit" class="btn btn-default">Get All Games</button>
           </form> -->
 
-      <form class="game" id="show-game">
-            <div class="show-game">
-            </div>
-            <button type="submit" class="btn btn-default">Show All Games</button>
-          </form>
-
+      <h3 id='new-game'>New Game</h3>
       <form id="create-game">
         <fieldset>
-          <legend>Create Game!</legend>
+          <!-- <legend>New Game!</legend> -->
           <!-- <input type="text" name="credentials[email]" placeholder="Email"> -->
-          <input type="submit" name="submit" value="Create Game!">
+          <input type="submit" name="submit" value="New Game!">
         </fieldset>
       </form>
 
@@ -76,15 +71,25 @@
 
       <button id='reset' type="submit" class="btn btn-default">Reset Board</button>
 
+      <form class="game" id="show-game">
+            <div class="show-game">
+            </div>
+            <button type="submit" class="btn btn-default">Total Games Played</button>
+          </form>
+
+      <h3 id=message></h3>
+
+      <!-- <h3 id='games-played'></h3> -->
+
       <h2 id="game-status"></h2>
 
       <div class='x-score'>
-        <h2>X Games Won</h2>
+        <h2>Current Session: X Games Won</h2>
         <h2 id='x-score'>0</h2>
       </div>
 
       <div class='o-score'>
-        <h2>O Games Won</h2>
+        <h2>Current Session: O Games Won</h2>
         <h2 id='o-score'>0</h2>
       </div>
 
@@ -106,7 +111,9 @@
         </tr>
       </table>
 
-      <h3 id=message></h3>
+      <div class='empty-box'>
+        <h1> </h1>
+      </div>
 
     </body>
 </html>

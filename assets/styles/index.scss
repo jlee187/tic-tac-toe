@@ -31,6 +31,11 @@ body {
 //   border-right: 1px solid $black;
 // }
 
+.empty-box {
+  clear: both;
+  width: 100%;
+}
+
 .o-score {
   background: $white;
   border: 1px solid $black;
@@ -53,8 +58,9 @@ body {
   width: 40%;
 }
 
-.reset {
+#reset {
   clear: both;
+  display: none;
   float: none;
 }
 

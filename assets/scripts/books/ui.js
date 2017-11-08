@@ -48,11 +48,12 @@ const signInSuccess = function (data) {
   $('#show-game').show()
   $('#create-game').show()
   $('#get-games').show()
+  $('#sign-up').hide()
 }
 
 const signInFailure = function (error) {
   console.error(error)
-  $('#message').text('Error on sign in')
+  $('#message').text('Please sign in! Note: Fields are case-sensitive!')
 }
 
 const changePasswordSuccess = function (data) {
@@ -84,6 +85,9 @@ const createGameSuccess = function (data) {
   store.game.over = data.game.over
   $('.board').show()
   $('#message').text('Created game succesfully')
+  $('#create-game').hide()
+  $('#reset').text('New Game')
+  $('#reset').css('display', 'block')
 }
 
 const createGameFailure = function (error) {
@@ -94,8 +98,8 @@ const createGameFailure = function (error) {
 const onSuccess = function (data) {
   if (data.games) {
     console.log(data.games)
-    console.log(data.games.length)
-    $('#message').text(data.games)
+    $('#message').text('You have played ' + data.games.length + ' games... You should probably take a break... Just saying')
+    // $('#message').text(data.games)
   } else {
     console.table(data.games)
   }

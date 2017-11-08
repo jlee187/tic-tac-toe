@@ -133,6 +133,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-0').css('background-color', '#fecf02')
+    $('#cell-1').css('background-color', '#fecf02')
+    $('#cell-2').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -140,6 +143,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-0').css('background-color', '#fecf02')
+    $('#cell-3').css('background-color', '#fecf02')
+    $('#cell-6').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -147,6 +153,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-0').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-8').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(5) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -154,6 +163,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-3').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-5').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(6) !== -1) && (boardChoice.indexOf(7) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -161,6 +173,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-6').css('background-color', '#fecf02')
+    $('#cell-7').css('background-color', '#fecf02')
+    $('#cell-8').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(7) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -168,6 +183,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-1').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-7').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(5) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -175,6 +193,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-2').css('background-color', '#fecf02')
+    $('#cell-5').css('background-color', '#fecf02')
+    $('#cell-8').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('X won!')
@@ -182,6 +203,9 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
+    $('#cell-2').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-6').css('background-color', '#fecf02')
   }
 }
 
@@ -193,6 +217,9 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-0').css('background-color', '#fecf02')
+    $('#cell-1').css('background-color', '#fecf02')
+    $('#cell-2').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
@@ -200,6 +227,9 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-0').css('background-color', '#fecf02')
+    $('#cell-3').css('background-color', '#fecf02')
+    $('#cell-6').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(0) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
@@ -207,6 +237,9 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-0').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-8').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(3) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(5) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
@@ -214,6 +247,9 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-3').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-5').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(6) !== -1) && (boardChoice.indexOf(7) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
@@ -221,6 +257,9 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-6').css('background-color', '#fecf02')
+    $('#cell-7').css('background-color', '#fecf02')
+    $('#cell-8').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(1) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(7) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
@@ -228,6 +267,9 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-1').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-7').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(5) !== -1) && (boardChoice.indexOf(8) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
@@ -235,6 +277,9 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-2').css('background-color', '#fecf02')
+    $('#cell-5').css('background-color', '#fecf02')
+    $('#cell-8').css('background-color', '#fecf02')
   } else if ((boardChoice.indexOf(2) !== -1) && (boardChoice.indexOf(4) !== -1) && (boardChoice.indexOf(6) !== -1)) {
     // console.log(turn + ' wins')
     $('#game-status').html('O won!')
@@ -242,10 +287,13 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
+    $('#cell-2').css('background-color', '#fecf02')
+    $('#cell-4').css('background-color', '#fecf02')
+    $('#cell-6').css('background-color', '#fecf02')
   }
 }
 
-$('#reset').on('click', function () {
+$('#reset').on('click', function (event) {
   const tds = document.getElementsByTagName('td')
   $('#game-status').html('')
   for (let i = 0; i < 9; i++) {
@@ -266,9 +314,16 @@ $('#reset').on('click', function () {
     tds[i].innerHTML = ''
   }
   whoseTurn = 2
-  // console.log(xGameBoard)
-  // console.log(oGameBoard)
-  // console.log(xGameBoard.concat(oGameBoard))
+  events.onCreateGame(event)
+  $('#cell-0').css('background-color', '#2aa2fe')
+  $('#cell-1').css('background-color', '#2aa2fe')
+  $('#cell-2').css('background-color', '#2aa2fe')
+  $('#cell-3').css('background-color', '#2aa2fe')
+  $('#cell-4').css('background-color', '#2aa2fe')
+  $('#cell-5').css('background-color', '#2aa2fe')
+  $('#cell-6').css('background-color', '#2aa2fe')
+  $('#cell-7').css('background-color', '#2aa2fe')
+  $('#cell-8').css('background-color', '#2aa2fe')
 })
 
 module.exports = {
