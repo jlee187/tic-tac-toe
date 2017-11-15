@@ -1,20 +1,3 @@
-// 'use strict'
-//
-// const config = require('../config.js')
-//
-// const signUp = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin.development + '/sign-up',
-//     method: 'POST',
-//     contentType: 'application/json',
-//     data
-//   })
-// }
-//
-// module.exports = {
-//   signUp
-// }
-//
 'use strict'
 
 const config = require('../config')

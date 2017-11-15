@@ -1,22 +1,3 @@
-// 'use strict'
-//
-// const onSuccess = function (data) {
-//   if (data.credentials) {
-//     console.log(data.credentials)
-//   } else {
-//     console.table(data.credentials)
-//   }
-// }
-//
-// const onError = function (response) {
-//   console.error(response)
-// }
-//
-// module.exports = {
-//   onSuccess,
-//   onError
-// }
-//
 'use strict'
 
 // Hide functionalities till signed in
@@ -70,6 +51,10 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   // console.log('Signed out successfully')
   $('#message').text('Signed out successfully')
+  $('.x-score').css('display', 'none')
+  $('.o-score').css('display', 'none')
+  $('#game-status').hide()
+  $('.headers').hide()
 }
 
 const signOutFailure = function () {
@@ -89,9 +74,11 @@ const createGameSuccess = function (data) {
   $('#create-game').hide()
   $('#reset').text('New Game')
   $('#reset').css('display', 'block')
+  $('.x-score').css('display', 'inline-block')
+  $('.o-score').css('display', 'inline-block')
 }
 
-const createGameFailure = function (error) {
+const createGameFailure = function () {
   // console.error()
   $('#message').text('Error on create game')
 }
