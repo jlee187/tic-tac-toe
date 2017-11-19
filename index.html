@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" id="sign-up-email" name="credentials[email]" placeholder="Email">
+          <input type="text" id="sign-up-password" name="credentials[password]" placeholder="Password">
+          <input type="text" id="sign-up-password-confirmation" name="credentials[password_confirmation]" placeholder="Password_Confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <input type="text" id="sign-in-email" name="credentials[email]" placeholder="Email">
+          <input type="text" id="sign-in-password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+      <form id="change-password">
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="text" name="passwords[old]" placeholder="Old Password">
+          <input type="text" name="passwords[new]" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password!">
+        </fieldset>
+      </form>
+
+      <!-- <form class="game" id="get-games">
+            <div class="get-games">
+            </div>
+            <button type="submit" class="btn btn-default">Get All Games</button>
+          </form> -->
+
+      <h3 class='headers' id='new-game'>New Game</h3>
+      <form id="create-game">
+        <fieldset>
+          <!-- <legend>New Game!</legend> -->
+          <!-- <input type="text" name="credentials[email]" placeholder="Email"> -->
+          <input type="submit" name="submit" value="New Game!">
+        </fieldset>
+      </form>
+
+      <!-- <form id="update-game">
+        <input name="game[cell][index]" type="text" value="0">
+        <input name="game[cell][value]" type="text" value="x">
+        <input name="game[over]" type="text" value="false">
+      </form> -->
+
+      <button id='reset' type="submit" class="btn btn-default">Reset Board</button>
+
+      <h3 class='headers' id='game-metrics'>Game Metrics</h3>
+      <form class="game" id="show-game">
+            <div class="show-game">
+            </div>
+            <button type="submit" class="btn btn-default">Total Games Played</button>
+          </form>
+
+      <h3 id=message></h3>
+
+      <form id="sign-out">
+        <fieldset>
+          <legend>Sign Out!</legend>
+          <input type="submit" name="submit" value="Sign Out!">
+        </fieldset>
+      </form>
+
+      <h2 id="game-status"></h2>
+
+      <div class='x-score'>
+        <h2>Current Session: X Games Won</h2>
+        <h2 id='x-score'>0</h2>
+      </div>
+
+      <div class='o-score'>
+        <h2>Current Session: O Games Won</h2>
+        <h2 id='o-score'>0</h2>
+      </div>
+
+      <table class="board">
+        <tr>
+          <td id="cell-0"> </td>
+          <td id="cell-1"> </td>
+          <td id="cell-2"> </td>
+        </tr>
+        <tr>
+          <td id="cell-3"> </td>
+          <td id="cell-4"> </td>
+          <td id="cell-5"> </td>
+        </tr>
+        <tr>
+          <td id="cell-6"> </td>
+          <td id="cell-7"> </td>
+          <td id="cell-8"> </td>
+        </tr>
+      </table>
+
+      <div class='empty-box'>
+        <h1> </h1>
+      </div>
+
+    </body>
+</html>
