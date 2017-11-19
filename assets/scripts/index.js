@@ -134,7 +134,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-0').css('background-color', '#fecf02')
     $('#cell-1').css('background-color', '#fecf02')
     $('#cell-2').css('background-color', '#fecf02')
@@ -145,7 +145,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-0').css('background-color', '#fecf02')
     $('#cell-3').css('background-color', '#fecf02')
     $('#cell-6').css('background-color', '#fecf02')
@@ -156,7 +156,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-0').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-8').css('background-color', '#fecf02')
@@ -167,7 +167,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-3').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-5').css('background-color', '#fecf02')
@@ -178,7 +178,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-6').css('background-color', '#fecf02')
     $('#cell-7').css('background-color', '#fecf02')
     $('#cell-8').css('background-color', '#fecf02')
@@ -189,7 +189,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-1').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-7').css('background-color', '#fecf02')
@@ -200,7 +200,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-2').css('background-color', '#fecf02')
     $('#cell-5').css('background-color', '#fecf02')
     $('#cell-8').css('background-color', '#fecf02')
@@ -211,7 +211,7 @@ const endGameX = function (boardChoice, turn) {
     $('#x-score').html(xscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-2').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-6').css('background-color', '#fecf02')
@@ -226,7 +226,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-0').css('background-color', '#fecf02')
     $('#cell-1').css('background-color', '#fecf02')
     $('#cell-2').css('background-color', '#fecf02')
@@ -237,7 +237,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-0').css('background-color', '#fecf02')
     $('#cell-3').css('background-color', '#fecf02')
     $('#cell-6').css('background-color', '#fecf02')
@@ -248,7 +248,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-0').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-8').css('background-color', '#fecf02')
@@ -259,7 +259,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-3').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-5').css('background-color', '#fecf02')
@@ -270,7 +270,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-6').css('background-color', '#fecf02')
     $('#cell-7').css('background-color', '#fecf02')
     $('#cell-8').css('background-color', '#fecf02')
@@ -281,7 +281,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-1').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-7').css('background-color', '#fecf02')
@@ -292,7 +292,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-2').css('background-color', '#fecf02')
     $('#cell-5').css('background-color', '#fecf02')
     $('#cell-8').css('background-color', '#fecf02')
@@ -303,7 +303,7 @@ const endGameO = function (boardChoice, turn) {
     $('#o-score').html(oscore)
     over = true
     store.game.over = true
-    $('.board').off()
+    $('.board').hide(1000)
     $('#cell-2').css('background-color', '#fecf02')
     $('#cell-4').css('background-color', '#fecf02')
     $('#cell-6').css('background-color', '#fecf02')
@@ -316,18 +316,12 @@ $('#reset').on('click', function (event) {
   for (let i = 0; i < 9; i++) {
     gameBoardFull[i] = ''
   }
-  // for (let i = 0; i < oGameBoard.length; i++) {
-  //   oGameBoard[i] = ''
-  // }
-  // for (let i = 0; i < xGameBoard.length; i++) {
-  //   xGameBoard[i] = ''
-  // }
   oGameBoard.splice(0, oGameBoard.length)
   xGameBoard.splice(0, xGameBoard.length)
   // console.log(gameBoardFull)
   over = false
   store.game.over = false
-  $('.board').off()
+  $('.board').show()
   for (let i = 0; i < tds.length; i++) {
     tds[i].innerHTML = ''
   }
